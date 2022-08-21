@@ -1,0 +1,96 @@
+﻿
+<style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: royalblue 4px solid;
+        border-radius: 5px;
+        margin: 50px 300px 50px 300px;
+        padding: 20px;
+        
+    }
+
+    
+</style>
+<div class="center">
+    @using (Html.BeginForm("RecyclePlastic", "Home", FormMethod.Post))
+    {
+    <form>
+        <H3 style="color:royalblue">Recycle Plastic</H3>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text "> <i class="fa fa-user"></i> </span>
+            </div>
+            <input name="fullName" class="form-control" placeholder="Plastic name" type="text">
+        </div>
+        <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                </span>
+            </div>
+            <!-- Value for weight -->
+            <input name="weight" class="form-control" placeholder="Weight (in KG)" type="number">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+            </div>
+            <!-- Value for number of bags -->
+            <input name="bags" class="form-control" placeholder="Bags" type="number">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </span>
+            </div>
+            <!-- Options for plastic type/ -->
+            <select class="form-control" name="plasticType">
+                <option value="None">Plastic Type</option>
+                <option value="PET">PETE or PET</option>
+                <option value="HDPE">HDPE</option>
+                <option value="PVC">PVC</option>
+                <option value="LDPE">LDPE</option>
+                <option value="PP">PP</option>
+                <option value="PS">PS</option>
+                <option value="N/A">N/A</option>
+            </select>
+        </div> <!-- form-group end.// -->
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-th" aria-hidden="true"></i> </span>
+            </div>
+            <input class="form-control" placeholder="Color" type="text" name="color">
+        </div>
+        <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+
+
+                </span>
+            </div>
+            <!-- Options for plastic ratings -->
+            <select class="form-control" name="plasticRating">
+                <option value="None">Plastic Rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div> <!-- form-group end.// --> <!-- Button to submit-->
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </form>
+    }
+
+
+</div>
+   

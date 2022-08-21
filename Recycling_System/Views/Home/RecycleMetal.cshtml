@@ -1,0 +1,72 @@
+﻿
+<style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: royalblue 4px solid;
+        border-radius: 5px;
+        margin: 50px 300px 50px 300px;
+        padding: 20px;
+    }
+</style>
+<div class="center">
+    @using (Html.BeginForm("RecycleMetal", "Home", FormMethod.Post))
+    {
+        <form>
+            <H3 style="color:royalblue">Recycle Metal</H3>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="fullName" class="form-control" placeholder="Metal name" type="text">
+            </div>
+            <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input name="weight" class="form-control" placeholder="Weight (in KG)" type="number">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+                </div>
+
+                <input name="bags" class="form-control" placeholder="Bags" type="number">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-clone" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <select class="form-control" name="metalType">
+                    <option value="None">Metal Type</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Steel">Steel</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Cooper">Cooper</option>
+                    <option value="Brass">Brass</option>
+                    <option value="Aluminium">Aluminium</option>
+
+                </select>
+            </div> <!-- form-group end.// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-arrows-h" aria-hidden="true"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Length (in Meters(m))" type="number" name="length">
+            </div>
+            <!-- form-group// -->
+           
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </form>
+    }
+
+
+</div>
+

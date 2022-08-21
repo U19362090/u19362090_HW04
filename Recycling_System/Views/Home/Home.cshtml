@@ -1,0 +1,154 @@
+﻿@using u19362090_HW04.Models;
+@model IEnumerable<u19362090_HW04.Models.Recycle>
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Plastic</h2>
+
+<!-- The Plastic Table -->
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfBags)
+        </th>
+        <th>
+            Plastic Type
+        </th>
+        <th>
+            Weight
+        </th>
+        <th>
+            Color
+        </th>
+        <th>
+            Rating
+        </th>
+        <th>
+            Total Weight
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.GetType() == typeof(Plastic))
+        {
+            Plastic plastic = (Plastic)item;
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.NoOfBags)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.PlasticType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => plastic.RecyclingRating)
+                </td>
+                <td>
+                    @item.TotalWeight()
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Edit", "EditPlastic", new { id = item.RecycleID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RecycleID })
+                </td>
+            </tr>
+
+        }
+    }
+</table>
+
+
+
+<h2>Metal</h2>
+<!-- The Metal Table -->
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfBags)
+        </th>
+        <th>
+            Metal Type
+        </th>
+        <th>
+            Length
+        </th>
+        <th>
+            Total Weight
+        </th>
+        <th>
+            Pull Cost
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.GetType() == typeof(Metal))
+        {
+            Metal metal = (Metal)item;
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => metal.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => metal.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => metal.NoOfBags)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => metal.MetalType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => metal.Length)
+                </td>
+                <td>
+                    @item.TotalWeight();
+                </td>
+                <td>
+                    @item.CalculatePullCost();
+                </td>
+                <td>
+
+                <td>
+                    @Html.ActionLink("Edit", "EditMetal", new { id = item.RecycleID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RecycleID })
+                </td>
+            </tr>
+
+        }
+    }
+
+</table>
